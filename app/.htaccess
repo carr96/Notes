@@ -1,0 +1,3 @@
+# dont let app be seen in browser
+
+Options -Indexes

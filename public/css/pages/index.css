@@ -1,0 +1,173 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #0c341d;
+}
+
+#hero{
+  height: 100vh;
+  width: 100vw;
+   background-size: cover;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("http://localhost/organizer/images/desk-organzied.jpg");
+   position: relative;
+}
+
+#entry{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: white;
+  width: 30vw;
+  height: 70vh;
+}
+
+#form-selections{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-bottom: solid thin #0c341d;
+}
+
+.selection-icons{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 15%;
+}
+
+.selection{
+  position: relative;
+  width: 33.33%;
+  text-align: center;
+  padding: 3%;
+  border-right: solid thin #0c341d;
+}
+
+.selection:last-child{
+  border-top-right-radius: 5px;
+  border-right: none;
+}
+
+.selection:first-child{
+  border-top-left-radius: 5px;
+}
+
+
+.active{
+  background-color: #155d34;
+  color: white;
+}
+
+.non-active{
+  background-color: white;
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h2{
+  margin-bottom: 8%;
+}
+
+label{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+.input-text{
+  width: 70%;
+  font-size: 110%;
+  border: none;
+  border:solid thin;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+#first-input{
+  margin-bottom: 5%;
+}
+
+#btn{
+  width: 50%;
+  margin-top: 10%;
+  font-size: 115%;
+  border: none;
+  background: none;
+  border-radius: 100px;
+  background-color: #2ecc71;
+  color: white;
+  padding: 3%;
+}
+
+#btn:hover, .selection:hover{
+  cursor: pointer;
+  filter: brightness(95%);
+}
+
+.error{
+  color: #e74c3c;
+  width: 100%;
+  text-align: center;
+  margin-top: 3%;
+}
+
+#username_err{
+}
+
+#combo_err{
+
+}
+
+#password_err{
+
+}
+
+.error-icon{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 28%;
+}
+
+#guest-list{
+  margin-top: 5%;
+}
+
+#guest-list h3{
+  text-align: center;
+  padding-bottom: 2%;
+  border-bottom: solid thin;
+}
+
+#guest-btn{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: black;
+  width: 50%;
+  background-color: #2ecc71;
+  color: white;
+  padding: 3%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 115%;
+  border: none;
+  border-radius: 100px;
+}
+
+.features-icons{
+  margin-right: 5%;
+}
