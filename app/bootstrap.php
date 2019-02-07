@@ -1,6 +1,6 @@
 <?php
 
-// Load config
+// Load config file
 require_once 'config/config.php';
 
 // Autoload Core libraries, loads all in library
@@ -9,5 +9,5 @@ spl_autoload_register(function($className){
 
 // Helpers
 require_once 'helpers/redirect.php';
-require_once 'helpers/session_handler.php'; 
+require_once 'helpers/session_handler.php';
 });
