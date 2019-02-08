@@ -1,5 +1,7 @@
 
 const selections = Array.from(document.querySelectorAll('.selection'));
+const loginBtn = document.getElementById('login-selection');
+let login;
 
 selections.forEach(el => {
   el.addEventListener('click', () => {
@@ -16,8 +18,21 @@ const clearRender = () =>{
   return document.querySelector('#form-wrapper').innerHTML='';
 }
 
-const renderLogin = () => {
-  const login = `
+login = `
+  <form class="form" id="login" action="http://localhost/organizer/pages/login" method="POST">
+    <h2> Login </h2>
+    <label for="username"> Username </label>
+    <input id="first-input" class="input-text" type="text" name="username">
+
+    <label for="password"> Password </label>
+    <input class="input-text" type="password" name="password">
+
+    <button type="submit" id="btn"> Login </button>
+  </form>
+`;
+
+loginBtn.addEventListener('click' ,() => {
+  login = `
     <form class="form" id="login" action="http://localhost/organizer/pages/login" method="POST">
       <h2> Login </h2>
       <label for="username"> Username </label>
@@ -29,8 +44,23 @@ const renderLogin = () => {
       <button type="submit" id="btn"> Login </button>
     </form>
   `;
+});
+
+const renderLogin = () => {
   return document.querySelector('#form-wrapper').insertAdjacentHTML('beforeend', login);
 }
+
+const signup = `
+  <form class="form" id="signup" action="http://localhost/organizer/pages/create" method="POST">
+    <h2> Signup </h2>
+    <label for="username"> Username </label>
+    <input id="first-input" class="input-text" type="text" name="username">
+
+    <label for="password"> Password </label>
+    <input class="input-text" type="password" name="password">
+    <button type="submit" id="btn"> Signup </button>
+  </form>
+`;
 
 window.addEventListener('load', function () {
 renderLogin();
@@ -48,17 +78,6 @@ const insertHTML = html => {
 
 document.querySelector('#signup-selection').addEventListener('click', () =>{
   clearRender();
-  const signup = `
-    <form class="form" id="signup" action="http://localhost/organizer/pages/create" method="POST">
-      <h2> Signup </h2>
-      <label for="username"> Username </label>
-      <input id="first-input" class="input-text" type="text" name="username">
-
-      <label for="password"> Password </label>
-      <input class="input-text" type="password" name="password">
-      <button type="submit" id="btn"> Signup </button>
-    </form>
-  `;
   insertHTML(signup);
 });
 
@@ -79,3 +98,18 @@ document.querySelector('#guest-selection').addEventListener('click', () =>{
   `;
   insertHTML(guest);
 });
+
+// Check to see what kind of error and what to view
+
+  // Get the textContent of username_err id
+  const errType = document.querySelector('#username_err').textContent;
+  if(errType.includes('Taken')){
+    insertHTML(signup);
+    const signupBtn = document.getElementById('signup-selection');
+    signupBtn.classList.remove('non-active');
+    loginBtn.classList.add('non-active');
+    signupBtn.classList.add('active');
+    loginBtn.classList.remove('active');
+    login = '';
+  }
+  // If it says 'taken' than that means render signup
