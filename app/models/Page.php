@@ -11,8 +11,18 @@ class Page{
     $this->db->query("INSERT INTO users(username, password) VALUES(:username, :password)");
     $this->db->bind(':username', $data['username']);
     $this->db->bind(':password', $data['password']);
-
     if($this->db->execute()){
+      return $this->getLastId();
+    } else {
+      die("database error");
+    }
+  }
+
+  public function usernameExists($username){
+    $this->db->query("SELECT * FROM users WHERE username = :username");
+    $this->db->bind(':username', $username);
+    $row = $this->db->single();
+    if($row->username){
       return true;
     } else{
       return false;
@@ -31,6 +41,10 @@ class Page{
     } else{
       return false;
     }
+  }
+
+  public function getLastId(){
+    return $this->db->lastInsertId();
   }
 
 

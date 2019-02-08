@@ -33,22 +33,20 @@ class Pages extends Controller{
       } else if(empty($data['password'])){
         // If password, send back proper error
         $data['password_err'] = 'Please fill out password';
+      } else if($this->usernameExists($data['username'])){
+        // Username is taken
+        $data['username_err'] = 'Username Taken';
       } else{
         // No errors, go to model
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-        if($this->pageModel->create($data)){
-          $this->view('dashboard/index');
-        } else{
-          die("ERROR creating user");
-        }
+        $user_id = $this->pageModel->create($data);
+        $this->createUserSession($user_id);
       }
-
-
     } else{
-      // If they just visited the page
-      $data = [];
-    }
-    $this->view('pages/create', $data);
+        // If they just visited the page
+        $data = [];
+      }
+    $this->view('pages/index', $data);
   }
 
   public function login(){
@@ -99,7 +97,15 @@ class Pages extends Controller{
   }
 
   public function createUserSession($user){
-    $_SESSION['user_id'] = $user->user_id;
+    $_SESSION['user_id'] = $user;
     redirect('/dashboards/index');
+  }
+
+  public function usernameExists($username){
+    if($this->pageModel->usernameExists($username)){
+      return true;
+    } else{
+      return false;
+    }
   }
 }
