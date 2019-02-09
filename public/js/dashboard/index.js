@@ -11,6 +11,7 @@
     });
   });
 }
+
 //Limits until added ...
 const noteLimit = 165;
 const titleLimit = 20;

@@ -114,7 +114,7 @@ class Pages extends Controller{
 
   public function createUserSession($user){
     $_SESSION['user_id'] = $user;
-    redirect('/dashboards/index');
+    redirect('/dashboards/home');
   }
 
   public function usernameExists($username){

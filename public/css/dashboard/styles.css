@@ -1,0 +1,110 @@
+
+nav{
+  width: 100%;
+  background-color: #4285f4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 2%;
+  font-size: 95%;
+  box-shadow: 0 3px 2px -2px gray;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  margin: 1% 3% .5% 2%;
+  width: 15%;
+  text-align: center;
+  position: relative;
+}
+
+nav i{
+  position: absolute;
+  top: 15%;
+}
+
+nav .fa-chart-line{
+  right: 17%;
+}
+
+nav .fa-code{
+  right: 18%;
+}
+
+nav .fa-tasks{
+  right: 28%;
+}
+
+nav .fa-user-circle{
+  right: 25%;
+}
+
+nav a:first-child{
+  margin-left: 5%;
+}
+
+
+nav a:hover{
+  filter: brightness(95%);
+}
+
+#logout{
+  width: 10%;
+  position: absolute;
+  right: 1%;
+  text-align: right;
+}
+
+#logout i{
+  margin-left: 5%;
+}
+
+.hidden{
+  display: none;
+}
+
+#Investments-hidden{
+  left: 5%;
+}
+
+#Developing-hidden{
+  left: 25%;
+}
+
+#Tasks-hidden{
+  left: 45%;
+}
+
+#Personal-hidden{
+  left: 65%;
+}
+
+.open{
+  position: absolute;
+  z-index: 1000;
+  top: 6.1%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  text-align:center;
+  border: solid thin #4285f4;
+}
+
+.open a{
+  text-decoration: none;
+  color: #4285f4;
+  background-color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-top: solid thin;
+}
+
+.open a:first-child{
+  border-top: none;
+}
+
+.open a:hover{
+  filter: brightness(90%);
+}

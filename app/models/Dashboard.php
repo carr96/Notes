@@ -41,10 +41,17 @@ class Dashboard{
     return $this->db->execute();
   }
 
-  public function notes_num($id){
-    $this->db->query("SELECT * FROM tbl_investement_notes_general WHERE user_id = :user_id");
+  public function notes_num($id, $table){
+    $this->db->query("SELECT * FROM ".$table." WHERE user_id = :user_id");
     $this->db->bind(':user_id', $_SESSION['user_id']);
     $this->db->execute();
     return $this->db->rowCount();
+  }
+
+  public function getName($id){
+    $this->db->query('SELECT * FROM users WHERE user_id = :user_id');
+    $this->db->bind(':user_id', $id);
+    $row = $this->db->single();
+    return $row->username;
   }
 }

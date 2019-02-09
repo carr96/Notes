@@ -11,27 +11,18 @@ class Dashboards extends Controller{
   // Maybe have no index page?
   // Api news generator?
   // All features shows in snippets?
-  public function index(){
-    if(!$this->authorize()){
-      echo "nope";
-    }
+  public function home(){
+    $this->authorize();
+    $name = $this->getName($_SESSION['user_id']);
+    $investment_total = $this->dashboardModel->notes_num($_SESSION['user_id'],'tbl_investement_notes_general');
+    $developing_total = $this->dashboardModel->notes_num($_SESSION['user_id'], 'tbl_developing_notes_general');
 
-    $this->table = 'tbl_investement_strategy';
-
-    if(empty($_POST['search'])){
-      $notes = $this->getNotes($this->table);
-    } else{
-      $notes = $this->searchNotes($_POST['search'], $this->table);
-    }
-
-    $notes_num = $this->dashboardModel->notes_num($_SESSION['user_id']);
-    $notes_num += 1;
     $data = [
-      'notes' => $notes,
-      'note_num' => $notes_num,
+      'name' => $name,
+      'investment_total' => $investment_total,
+      'developing_total' => $developing_total
     ];
-    $this->view('dashboards/index', $data);
-
+    $this->view('dashboards/home', $data);
   }
 
   /*
@@ -71,6 +62,9 @@ class Dashboards extends Controller{
     }
   }
 
+  public function getName($id){
+    return $this->dashboardModel->getName($id);
+  }
   public function getNotes($table){
     return $this->dashboardModel->getNotes($this->table);
   }
