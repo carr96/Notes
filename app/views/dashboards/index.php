@@ -103,7 +103,7 @@ Other Features
             <div class="textarea-container">
               <div class="note-id-hide">'. htmlspecialchars($note->note_id) .'</div>'.'
               <div class="saved-note">'. htmlspecialchars($note->note) .'</div>
-              <div class="delete"><a onclick="return confirmation()" href="'.URLROOT.'/dashboards/delete_note/'.htmlspecialchars($note->note_id).'/'.$data['table'] .'"><i class="far fa-trash-alt"></i></a></div>
+              <div class="delete"><a onclick="confirmation(event)" href="'.URLROOT.'/dashboards/delete_note/'.htmlspecialchars($note->note_id).'/'.$data['table'] .'"><i class="far fa-trash-alt"></i></a></div>
               <div class="title non-selected-note">'.htmlspecialchars($note->title).'</div>
             </div>
             ';
@@ -129,7 +129,33 @@ Other Features
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 -->
 
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="<?php echo URLROOT;?>/js/dashboard/index.js"></script>
+
+  <script>
+  function confirmation(ev) {
+ev.preventDefault();
+var urlToRedirect = ev.target.offsetParent.children[0].href; //use currentTarget because the click
+swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this imaginary file!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+  if (willDelete) {
+    window.location.href = urlToRedirect;
+    swal("Poof! Your imaginary file has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your imaginary file is safe!");
+  }
+});
+}
+
+  </script>
   </body>
 </html>

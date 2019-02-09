@@ -31,7 +31,6 @@ const noteOriginalFunc = n => {
 
 // Seting Saved Note to a certain limit length
 {
-
   const limitSaved = (note = '', title = '', noteLimit, titleLimit) => {
     if(note === ''){
       newTitle= title.substring(0, titleLimit);
@@ -155,7 +154,5 @@ const noteOriginalFunc = n => {
 
 // Are you sure delete button
 {
-  function confirmation() {
-    return confirm('Are you sure you want to do this?');
-  }
+
 }
