@@ -94,6 +94,19 @@ class Pages extends Controller{
     }
   }
 
+  public function guest(){
+    $keyLength = 16;
+    $str = "1234567890abcdefghijklmnopqrstuvqxyz()/$";
+    $username = 'Guest:'. substr(str_shuffle($str), 0, $keyLength);
+    $password = substr(str_shuffle($str), 0, $keyLength);
+    $data = [
+      'username' => $username,
+      'password' => $password
+    ];
+    $user_id = $this->pageModel->create($data);
+    $this->createUserSession($user_id);
+  }
+
   public function logout(){
     unset($_SESSION['user_id']);
     redirect('/pages/index');

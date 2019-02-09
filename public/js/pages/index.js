@@ -92,7 +92,7 @@ document.querySelector('#guest-selection').addEventListener('click', () =>{
       <p> <i class="fas fa-sticky-note features-icons"></i>Store information </p>
       <p><i class="fas fa-newspaper features-icons"></i>See news you care about</p>
       <p> <i class="fas fa-list-alt features-icons"></i>Much more! </p>
-      <a id="guest-btn" href="http://localhost/organizer/pages/login">Continue As Guest</a>
+      <a id="guest-btn" href="http://localhost/organizer/pages/guest">Continue As Guest</a>
     </div>
   </div>
   `;
