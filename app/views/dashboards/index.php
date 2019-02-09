@@ -135,7 +135,7 @@ Other Features
   <script>
   function confirmation(ev) {
 ev.preventDefault();
-var urlToRedirect = console.log(ev.parentElement);
+var urlToRedirect = ev.target.offsetParent.children[0].href; //use currentTarget because the click
 swal({
   title: "Are you sure?",
   text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -145,8 +145,8 @@ swal({
 })
 .then((willDelete) => {
   // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
-  window.location.href = urlToRedirect;
   if (willDelete) {
+    window.location.href = urlToRedirect;
     swal("Poof! Your imaginary file has been deleted!", {
       icon: "success",
     });
@@ -155,6 +155,7 @@ swal({
   }
 });
 }
+
   </script>
   </body>
 </html>
