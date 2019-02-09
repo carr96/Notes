@@ -5,7 +5,7 @@
 body{
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  color: #0c341d;
+  color: #4d4d4d;
 }
 
 #hero{
@@ -32,7 +32,7 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  border-bottom: solid thin #0c341d;
+  border-bottom: solid thin #565656;
 }
 
 .selection-icons{
@@ -47,7 +47,7 @@ body{
   width: 33.33%;
   text-align: center;
   padding: 3%;
-  border-right: solid thin #0c341d;
+  border-right: solid thin #565656;
 }
 
 .selection:last-child{
@@ -61,12 +61,13 @@ body{
 
 
 .active{
-  background-color: #155d35;
+  background-color: #4285f4;
   color: white;
 }
 
 .non-active{
   background-color: white;
+  color: #4d4d4d;
 }
 
 .form{
@@ -106,7 +107,7 @@ label{
   border: none;
   background: none;
   border-radius: 100px;
-  background-color: #2ecc71;
+  background-color: #4285f4;
   color: white;
   padding: 3%;
 }
@@ -158,7 +159,7 @@ label{
   transform: translate(-50%);
   background-color: black;
   width: 50%;
-  background-color: #2ecc71;
+  background-color: #4285f4;
   color: white;
   padding: 3%;
   text-decoration: none;

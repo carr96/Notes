@@ -46,6 +46,4 @@ class Page{
   public function getLastId(){
     return $this->db->lastInsertId();
   }
-
-
 }
