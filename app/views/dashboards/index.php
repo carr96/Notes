@@ -15,9 +15,7 @@ Other Features
       Dashboard
     </title>
 
-     <link rel="stylesheet" type="text/css" media="(max-width:599px)" href="<?php echo URLROOT;?>/css/dashboard/index.css">
-     <link rel="stylesheet" type="text/css" media="(min-width:600px)" href="<?php echo URLROOT;?>/css/dashboard/index.css">
-     <link rel="stylesheet" type="text/css" media="(min-width:1000px)" href="<?php echo URLROOT;?>/css/dashboard/index-desktop.css">
+     <link rel="stylesheet" type="text/css" href="<?php echo URLROOT;?>/css/dashboard/index.css">
 
      <link href="https://fonts.googleapis.com/css?family=Cardo|Lato|Merriweather|Open+Sans|PT+Sans|PT+Serif|Raleway" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -123,7 +121,7 @@ Other Features
         </main>
       </section>
     </section>
-    
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="<?php echo URLROOT;?>/js/dashboard/index.js"></script>

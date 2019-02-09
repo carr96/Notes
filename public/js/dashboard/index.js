@@ -161,20 +161,21 @@ const noteOriginalFunc = n => {
 
   function confirmation(ev) {
     ev.preventDefault();
-    var urlToRedirect = ev.target.offsetParent.children[0].href; //use currentTarget because the click
+    var urlToRedirect = ev.target.offsetParent.children[0].href;
     swal({
       title: "Are you sure?",
       text: "Once deleted, your note will be gone forever!",
       icon: "warning",
-      buttons: true,
+      buttons: [true, 'Delete'],
       dangerMode: true,
     })
     .then((willDelete) => {
-      // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
       if (willDelete) {
         window.location.href = urlToRedirect;
       } else {
-        swal("Everyone deserves a second chance! Your note is still good");
+        swal({
+          text:"Everynote deserves a second chance! Your note is still good",
+        })
       }
     });
   }
