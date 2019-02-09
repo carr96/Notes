@@ -129,7 +129,12 @@ Other Features
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 -->
 
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="<?php echo URLROOT;?>/js/dashboard/index.js"></script>
+  <script>
+  function confirmation() {
+    swal("Hello world!");
+  }
+  </script>
   </body>
 </html>

@@ -155,7 +155,5 @@ const noteOriginalFunc = n => {
 
 // Are you sure delete button
 {
-  function confirmation() {
-    return confirm('Are you sure you want to do this?');
-  }
+
 }
