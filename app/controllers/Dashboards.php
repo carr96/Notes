@@ -77,6 +77,7 @@ class Dashboards extends Controller{
 
   // returns searched notes, sets a search-word session that is printed to webpage
   public function searchNotes($search, $table){
+    unset($_SESSION['confirm']);
     $search = filter_var($search, FILTER_SANITIZE_STRING);
     $_SESSION['search-word'] = $search;
     return $this->dashboardModel->searchNotes($search, $table);
@@ -99,10 +100,6 @@ class Dashboards extends Controller{
         'title' => $_POST['title'],
         'error' => ''
       ];
-
-      if(empty($data['note']) || empty($data['title'])){
-        $data['error'] = 'Make sure both fields are filled in';
-      } else{
         if($this->dashboardModel->add_note($data['note'], $data['title'], $_SESSION['user_id'], $table)){
           // Confirm note added and show new note on aside
           $this->kill_session('inside');
@@ -112,7 +109,6 @@ class Dashboards extends Controller{
           // Error with note
           die("Error");
         }
-      }
     } else{
       // If no post method
       $this->index();
@@ -165,6 +161,7 @@ class Dashboards extends Controller{
   // If inside then return true back to method that called it.
   public function kill_session($location){
     unset($_SESSION['confirm']);
+    unset($_SESSION['search-word']);
     if($location = 'outside'){
       $this->goBack();
     } else{

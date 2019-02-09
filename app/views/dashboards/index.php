@@ -1,7 +1,7 @@
 
 <!--
 Error handling
-Other Features 
+Other Features
 -->
 
 
@@ -22,8 +22,6 @@ Other Features
      <link href="https://fonts.googleapis.com/css?family=Cardo|Lato|Merriweather|Open+Sans|PT+Sans|PT+Serif|Raleway" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-
-
   </head>
   <body>
     <section id="wrapper">
@@ -105,7 +103,7 @@ Other Features
             <div class="textarea-container">
               <div class="note-id-hide">'. htmlspecialchars($note->note_id) .'</div>'.'
               <div class="saved-note">'. htmlspecialchars($note->note) .'</div>
-              <div class="delete"><a href="'.URLROOT.'/dashboards/delete_note/'.htmlspecialchars($note->note_id).'/'.$data['table'] .'"><i class="far fa-trash-alt"></i></a></div>
+              <div class="delete"><a onclick="return confirmation()" href="'.URLROOT.'/dashboards/delete_note/'.htmlspecialchars($note->note_id).'/'.$data['table'] .'"><i class="far fa-trash-alt"></i></a></div>
               <div class="title non-selected-note">'.htmlspecialchars($note->title).'</div>
             </div>
             ';
