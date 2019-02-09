@@ -29,13 +29,16 @@ class Pages extends Controller{
         redirect('/pages/index');
       } else if(empty($data['username'])){
         // If username, send back proper error
-        $data['username_err'] = 'Please fill out username';
+        $data['username_err'] = 'Must have a username to signup';
+        $this->view('pages/index', $data);
       } else if(empty($data['password'])){
         // If password, send back proper error
-        $data['password_err'] = 'Please fill out password';
+        $data['password_err'] = 'Must have a password to signup';
+        $this->view('pages/index', $data);
       } else if($this->usernameExists($data['username'])){
         // Username is taken
-        $data['username_err'] = 'Username Taken';
+        $data['username_err'] = 'Username Taken, try a different name to signup';
+        $this->view('pages/index', $data);
       } else{
         // No errors, go to model
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
@@ -74,7 +77,7 @@ class Pages extends Controller{
         $loggedIn = $this->pageModel->login($data);
           if($loggedIn){
             // User is correctly logged in. Now send them to profile.
-            $this->createUserSession($loggedIn);
+            $this->createUserSession($loggedIn->user_id);
           } else{
             // Login creds are wrong
             $data['combo_err'] = 'Username/Password combo is wrong';

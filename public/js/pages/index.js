@@ -102,8 +102,9 @@ document.querySelector('#guest-selection').addEventListener('click', () =>{
 // Check to see what kind of error and what to view
 
   // Get the textContent of username_err id
-  const errType = document.querySelector('#username_err').textContent;
-  if(errType.includes('Taken')){
+  const usernameErrType = document.querySelector('#username_err').textContent;
+  const passwordErrType = document.querySelector('#password_err').textContent;
+  if(usernameErrType.includes('signup') || passwordErrType.includes('signup')){
     insertHTML(signup);
     const signupBtn = document.getElementById('signup-selection');
     signupBtn.classList.remove('non-active');
@@ -112,4 +113,3 @@ document.querySelector('#guest-selection').addEventListener('click', () =>{
     loginBtn.classList.remove('active');
     login = '';
   }
-  // If it says 'taken' than that means render signup
