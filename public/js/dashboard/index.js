@@ -152,7 +152,30 @@ const noteOriginalFunc = n => {
   });
 }
 
-// Are you sure delete button
+// Delete Confirmation
 {
+  const deleteBox = Array.from(document.querySelectorAll('.delete-a'));
+  deleteBox.forEach(el => {
+    el.addEventListener('click', confirmation)
+  });
 
+  function confirmation(ev) {
+    ev.preventDefault();
+    var urlToRedirect = ev.target.offsetParent.children[0].href; //use currentTarget because the click
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, your note will be gone forever!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+      if (willDelete) {
+        window.location.href = urlToRedirect;
+      } else {
+        swal("Everyone deserves a second chance! Your note is still good");
+      }
+    });
+  }
 }
