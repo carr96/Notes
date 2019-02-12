@@ -22,6 +22,7 @@ class Dashboards extends Controller{
       $name = substr_replace($name ,"", -17);
     }
 
+    $name = htmlspecialchars($name);
     $data = [
       'name' => 'Welcome ' . $name,
       'investment_total' => $investment_total,
@@ -39,6 +40,9 @@ class Dashboards extends Controller{
     $this->authorize();
     $this->table = 'tbl_investement_notes_general';
     $notes = $this->notes($this->table);
+    if($notes === ''){
+      $notes = htmlspecialchars($notes);
+    }
     $data = $this->data($notes, $this->table, 'Investing - General', 'investment_general');
     $this->view('dashboards/index', $data);
   }
@@ -47,6 +51,9 @@ class Dashboards extends Controller{
     $this->authorize();
     $this->table = 'tbl_developing_notes_general';
     $notes = $this->notes($this->table);
+    if($notes === ''){
+      $notes = htmlspecialchars($notes);
+    }
     $data = $this->data($notes, $this->table, 'Developing - General', 'developing_general');
     $this->view('dashboards/index', $data);
   }

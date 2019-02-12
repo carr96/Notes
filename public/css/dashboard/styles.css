@@ -108,3 +108,11 @@ nav a:hover{
 .open a:hover{
   filter: brightness(90%);
 }
+
+.disable{
+
+}
+
+.i a{
+  background-color: red; 
+}
