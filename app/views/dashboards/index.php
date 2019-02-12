@@ -1,10 +1,3 @@
-
-<!--
-Error handling
-Other Features
--->
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
