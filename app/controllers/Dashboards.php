@@ -17,11 +17,18 @@ class Dashboards extends Controller{
     $investment_total = $this->dashboardModel->notes_num($_SESSION['user_id'],'tbl_investement_notes_general');
     $developing_total = $this->dashboardModel->notes_num($_SESSION['user_id'], 'tbl_developing_notes_general');
 
+    // Check if the user is a guest or not
+    if(strpos($name, 'Guest:') !== false){
+      $name = substr_replace($name ,"", -17);
+    }
+
     $data = [
-      'name' => $name,
+      'name' => 'Welcome ' . $name,
       'investment_total' => $investment_total,
       'developing_total' => $developing_total
     ];
+
+    // Change data name to more friendly
     $this->view('dashboards/home', $data);
   }
 
