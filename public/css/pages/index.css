@@ -172,3 +172,16 @@ label{
 .features-icons{
   margin-right: 5%;
 }
+
+@media only screen and (max-width: 800px) {
+  #entry{
+    top: 45%;
+    width: 90vw;
+    height: 70vh;
+  }
+
+  #guest-btn{
+    width: 60%;
+    padding: 2%; 
+  }
+}
