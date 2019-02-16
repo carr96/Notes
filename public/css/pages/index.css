@@ -24,7 +24,7 @@ body{
   border-radius: 5px;
   background-color: white;
   width: 30vw;
-  height: 70vh;
+  height: 65vh;
 }
 
 #form-selections{
@@ -121,7 +121,7 @@ label{
   color: #e74c3c;
   width: 100%;
   text-align: center;
-  margin-top: 3%;
+  margin-top: 1%;
 }
 
 #username_err{
@@ -177,11 +177,15 @@ label{
   #entry{
     top: 45%;
     width: 90vw;
-    height: 70vh;
+    height: 65vh;
   }
 
   #guest-btn{
     width: 60%;
-    padding: 2%; 
+    padding: 2%;
+  }
+
+  .error{
+    margin-top: .5%;  
   }
 }

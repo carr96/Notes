@@ -18,12 +18,21 @@
   </head>
   <body>
     <div id="wrapper">
+      <header id="phone-header">
+        <?php echo $data['name'] ; ?>
+      </header>
       <?php include 'nav.php';?>
-
+      <nav id="phone-nav">
+        <a class="phone-link" href=""><span class="nav-word">Investments</span><i class="fas fa-chart-line"></i></a>
+        <a class="phone-link" href=""><span class="nav-word">Developing</span><i class="fas fa-code"></i></a>
+        <a class="phone-link" href=""><span class="nav-word">Tasks</span><i class="fas fa-tasks"></i></a>
+        <a class="phone-link" href=""><span class="nav-word">Personal</span><i class="far fa-user-circle"></i></a>
+        <a class="phone-link" href=""><span class="nav-word">Settings</span><i class="fas fa-cogs"></i></a>
+      </nav>
       <section>
-        <h1> <?php echo $data['name'] ; ?> </h1>
+        <h1 id="desktop-h1"> <?php echo $data['name'] ; ?> </h1>
 
-        <div class="category">
+        <div id="first-cat" class="category">
           <div class="cat-head">Developing</div>
           <div class="notes">Total Notes: <?php echo $data['developing_total']; ?></div>
           <div class="cat-btn"><a href="<?php echo URLROOT;?>/dashboards/developing_general">Enter Dashboard</a></div>

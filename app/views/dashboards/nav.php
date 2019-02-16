@@ -1,9 +1,9 @@
 <nav id="nav">
-  <a class="link" id="active" href="javascript:void(0)">Investments<i class="fas fa-chart-line"></i></a>
-  <a class="link" href="javascript:void(0)">Developing<i class="fas fa-code"></i></a>
-  <a class="link" href="javascript:void(0)">Tasks<i class="fas fa-tasks"></i></a>
-  <a class="link" href="javascript:void(0)">Personal<i class="far fa-user-circle"></i></a>
-  <a class="link" href="javascript:void(0)">Settings<i class="fas fa-cogs"></i></a>
+  <a class="link" id="active" href="javascript:void(0)"><span class="nav-word">Investments</span><i class="fas fa-chart-line"></i></a>
+  <a class="link" href="javascript:void(0)"><span class="nav-word">Developing</span><i class="fas fa-code"></i></a>
+  <a class="link" href="javascript:void(0)"><span class="nav-word">Tasks</span><i class="fas fa-tasks"></i></a>
+  <a class="link" href="javascript:void(0)"><span class="nav-word">Personal</span><i class="far fa-user-circle"></i></a>
+  <a class="link" href="javascript:void(0)"><span class="nav-word">Settings</span><i class="fas fa-cogs"></i></a>
 </nav>
 <div class="hidden" id="Investments-hidden">
   <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/investment_general">General</a>
@@ -35,7 +35,6 @@
   <a class="sub-link disable" href="">Nutrition</a>
   <a class="sub-link disable" href="">Resume</a>
   <a class="sub-link disable" href="">Goals</a>
-  <a id="logout"href="<?php echo URLROOT?>/dashboards/logout"> Logout</a>
 </div>
 
 <div class="hidden" id="Settings-hidden">

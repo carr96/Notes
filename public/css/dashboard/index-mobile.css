@@ -1,0 +1,39 @@
+/**
+  CSS elements from desktop version to hide
+  <span class="nav-link-word">
+**/
+
+/**
+  New nav, move to bottom of page and take out words
+**/
+.nav-link-word{
+  display: none;
+}
+
+nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: none;
+  background-color: white;
+  margin-bottom: 0%;
+  height: 7vh;
+  z-index: 1000;
+  justify-content: space-around;
+  border-top: solid thin #eee;
+}
+
+nav a{
+  color: #999;
+  margin: 0%;
+  font-size: 130%;
+}
+
+nav i{
+  position: relative;
+  padding-top: 15%;
+}
+
+/**
+ Header move to top
+**/ 

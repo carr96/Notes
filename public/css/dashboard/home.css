@@ -69,3 +69,15 @@ section h1{
 .cat-btn a:hover{
   filter: brightness(90%);
 }
+
+@media only screen and (max-width:800px){
+  section h1{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: lighter;
+  }
+
+  .category{
+    width: 90%;
+    padding-bottom: 7%; 
+  }
+}

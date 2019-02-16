@@ -10,6 +10,7 @@
 
      <link rel="stylesheet" type="text/css" href="<?php echo URLROOT;?>/css/dashboard/index.css">
      <link rel="stylesheet" type="text/css" href="<?php echo URLROOT;?>/css/dashboard/styles.css">
+     <link rel="stylesheet" type="text/css" media="(max-width:890px)" href="<?php echo URLROOT;?>/css/dashboard/index-mobile.css">
 
      <link href="https://fonts.googleapis.com/css?family=Cardo|Lato|Merriweather|Open+Sans|PT+Sans|PT+Serif|Raleway" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,12 +18,12 @@
   </head>
   <body>
     <section id="wrapper">
-      <nav id="nav">
-        <a class="link" id="active" href="javascript:void(0)">Investments<i class="fas fa-chart-line"></i></a>
-        <a class="link" href="javascript:void(0)">Developing<i class="fas fa-code"></i></a>
-        <a class="link" href="javascript:void(0)">Tasks<i class="fas fa-tasks"></i></a>
-        <a class="link" href="javascript:void(0)">Personal<i class="far fa-user-circle"></i></a>
-        <a class="link" href="javascript:void(0)">Settings<i class="fas fa-cogs"></i></a>
+      <nav>
+        <a class="link" id="active" href="javascript:void(0)"><span class="nav-link-word">Investments</span><i class="fas fa-chart-line"></i></a>
+        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Developing</span><i class="fas fa-code"></i></a>
+        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Tasks</span><i class="fas fa-tasks"></i></a>
+        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Personal</span><i class="far fa-user-circle"></i></a>
+        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Settings</span><i class="fas fa-cogs"></i></a>
       </nav>
       <div class="hidden" id="Investments-hidden">
         <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/investment_general">General</a>
