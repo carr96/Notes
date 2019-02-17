@@ -308,6 +308,7 @@ to   { opacity: 1; }
     - sort down
     - search div
     - new note button
+    - cancel note
 **/
 .fa-sort-down{
   display: none;
@@ -318,5 +319,9 @@ to   { opacity: 1; }
 }
 
 #new-note-button{
+  display: none;
+}
+
+#cancel-note{
   display: none; 
 }

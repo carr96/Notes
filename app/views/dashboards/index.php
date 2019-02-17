@@ -19,11 +19,11 @@
   <body>
     <section id="wrapper">
       <nav>
-        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Investments</span><i class="fas fa-chart-line"></i></a>
-        <a class="link active" href="javascript:void(0)"><span class="nav-link-word">Developing</span><i class="fas fa-code"></i></a>
-        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Tasks</span><i class="fas fa-tasks"></i></a>
-        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Personal</span><i class="far fa-user-circle"></i></a>
-        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Settings</span><i class="fas fa-cogs"></i></a>
+        <a id="Investments" class="link" href="javascript:void(0)"><span class="nav-link-word">Investments</span><i class="fas fa-chart-line"></i></a>
+        <a id="Developing" class="link" href="javascript:void(0)"><span class="nav-link-word">Developing</span><i class="fas fa-code"></i></a>
+        <a id="Tasks" class="link" href="javascript:void(0)"><span class="nav-link-word">Tasks</span><i class="fas fa-tasks"></i></a>
+        <a id="Personal" class="link" href="javascript:void(0)"><span class="nav-link-word">Personal</span><i class="far fa-user-circle"></i></a>
+        <a id="Settings" class="link" href="javascript:void(0)"><span class="nav-link-word">Settings</span><i class="fas fa-cogs"></i></a>
       </nav>
       <div class="hidden" id="Investments-hidden">
         <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/investment_general">General</a>
@@ -60,18 +60,18 @@
 
       <div class="hidden" id="Settings-hidden">
         <a class="sub-link disable" id="logout"href="<?php echo URLROOT?>/dashboards/logout"> Logout</a>
-        <a class="sub-link disable" href="">Change Usernae</a>
+        <a class="sub-link disable" href="">Change Username</a>
         <a class="sub-link disable" href="">Change Password</a>
       </div>
 
 
       <header>
-        <?php echo $data['header']?>
+        <span id="header-text"><?php echo $data['header']?></span>
         <i class="fas fa-sort-down"></i>
         <i class="fas fa-search fa-search-mobile"></i>
       </header>
       <section id="content-wrapper">
-        <aside>
+        <aside id="aside">
           <?php
           if(isset($_SESSION['confirm'])){
               echo "<div class='confirm'><a href='".URLROOT."/dashboards/kill_session/outside'><i class='fas fa-times'></i>".$_SESSION['confirm']." </a></div>";
@@ -120,6 +120,7 @@
               <button id="reset-btn" type="reset" value="Reset">Clear Note</button>
               <input name="title" id="add-title" type="text" placeholder="Title">
               <button id="add-note" type="submit">Add</button>
+              <button type="button" id="cancel-note">Cancel</button>
           </form>
           </div>
         </main>

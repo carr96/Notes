@@ -70,12 +70,53 @@ header{
 }
 
 /**
-  Hide the new note textarea
+  new note textarea,
 **/
 main{
   display: none;
+  width: 100%;
+  margin: 15% auto 0 auto;
 }
 
+#note{
+  height: 48vh;
+}
+
+#add-title{
+  width: 100%;
+  padding: 2%;
+}
+
+#add-note{
+  width: 49%;
+  padding: 2%;
+  position: absolute;
+  right: auto;
+  top: 100%;
+  left: 0;
+  margin-left: 0%;
+}
+
+#reset-btn{
+  width: 49%;
+  padding: 2%;
+  left: auto;
+  top: 100%;
+  right: 0;
+}
+
+#cancel-note{
+  display: block;
+  position: absolute;
+  top: 200%;
+  width: 100%;
+  border: none;
+  background: #e74c3c;
+  border-radius: 5px;
+  padding: 2%;
+  color: white;
+  font-size: 105%;
+}
 /**
   Hide the 'new note'
 **/

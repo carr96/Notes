@@ -1,8 +1,15 @@
 // Nav Bar
 {
+  const headerTxt = document.getElementById('header-text').textContent;
   const subMenu = Array.from(document.querySelectorAll('.link'));
   let id;
   subMenu.forEach(el => {
+    id = el.textContent;
+    if(id === headerTxt){
+      el.classList.add('active');
+    } else{
+      el.classList.remove('active');
+    }
     el.addEventListener('click', () => {
       id = el.textContent;
       id += '-hidden';
@@ -180,4 +187,50 @@ const noteOriginalFunc = n => {
       }
     });
   }
+}
+
+/*****
+  Mobile JavaScript
+*****/
+
+const screenWidth = window.innerWidth;
+const getscreenWidth = (screenWidth) =>{
+    return screenWidth;
+}
+// Btns
+const noteBtn = document.getElementById('new-note-button');
+const savedNote = document.getElementById('aside');
+let newNote = document.getElementById("main");
+
+// New Note Button/Update
+{
+  noteBtn.addEventListener('click' ,() =>{
+      newNote.style.display = "block";
+      if(getscreenWidth(screenWidth) > 900){
+        savedNote.style.display = "block";
+      } else{
+        savedNote.style.display = "none";
+      }
+      noteBtn.style.display = "none";
+  });
+
+  savedNote.addEventListener('click', () => {
+    newNote.style.display = "block";
+    noteBtn.style.display = "none";
+    if(getscreenWidth(screenWidth) > 900){
+      savedNote.style.display = "block";
+    } else{
+      savedNote.style.display = "none";
+    }
+  });
+}
+
+// Cancel Btn
+{
+  const cancelBtn = document.getElementById('cancel-note');
+  cancelBtn.addEventListener('click', () => {
+    newNote.style.display = "none";
+    savedNote.style.display = "block";
+    noteBtn.style.display = "block";
+  });
 }
