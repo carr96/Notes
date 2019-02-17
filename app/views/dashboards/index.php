@@ -19,8 +19,8 @@
   <body>
     <section id="wrapper">
       <nav>
-        <a class="link" id="active" href="javascript:void(0)"><span class="nav-link-word">Investments</span><i class="fas fa-chart-line"></i></a>
-        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Developing</span><i class="fas fa-code"></i></a>
+        <a class="link" href="javascript:void(0)"><span class="nav-link-word">Investments</span><i class="fas fa-chart-line"></i></a>
+        <a class="link active" href="javascript:void(0)"><span class="nav-link-word">Developing</span><i class="fas fa-code"></i></a>
         <a class="link" href="javascript:void(0)"><span class="nav-link-word">Tasks</span><i class="fas fa-tasks"></i></a>
         <a class="link" href="javascript:void(0)"><span class="nav-link-word">Personal</span><i class="far fa-user-circle"></i></a>
         <a class="link" href="javascript:void(0)"><span class="nav-link-word">Settings</span><i class="fas fa-cogs"></i></a>
@@ -67,6 +67,8 @@
 
       <header>
         <?php echo $data['header']?>
+        <i class="fas fa-sort-down"></i>
+        <i class="fas fa-search fa-search-mobile"></i>
       </header>
       <section id="content-wrapper">
         <aside>
@@ -93,7 +95,7 @@
           <i class="new-note-i fas fa-edit"></i>
           <i class="new-note-i far fa-sticky-note"></i>
           -->
-          <div class="textarea-container">
+          <div id="new-note-container" class="textarea-container">
             <div class="note-id-hide"></div>
             <div class="saved-note"></div>
             <div id="setNote" class="title selected-note"><i class="new-note-i fas fa-pencil-alt"></i> New Note</div>
@@ -122,6 +124,11 @@
           </div>
         </main>
       </section>
+
+      <div id="new-note-button">
+        <i class="fas fa-plus"></i>
+        <i class="new-note-i fas fa-pencil-alt"></i>
+      </div>
     </section>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

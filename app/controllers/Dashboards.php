@@ -43,7 +43,7 @@ class Dashboards extends Controller{
     if($notes === ''){
       $notes = htmlspecialchars($notes);
     }
-    $data = $this->data($notes, $this->table, 'Investing - General', 'investment_general');
+    $data = $this->data($notes, $this->table, 'Investing', 'investment_general');
     $this->view('dashboards/index', $data);
   }
 
@@ -54,7 +54,7 @@ class Dashboards extends Controller{
     if($notes === ''){
       $notes = htmlspecialchars($notes);
     }
-    $data = $this->data($notes, $this->table, 'Developing - General', 'developing_general');
+    $data = $this->data($notes, $this->table, 'Developing', 'developing_general');
     $this->view('dashboards/index', $data);
   }
 

@@ -302,3 +302,21 @@ to   { opacity: 1; }
   transform: translate(-50%, -50%);
   margin-left: 5%;
 }
+
+/**
+  HTML elements to hide during big version
+    - sort down
+    - search div
+    - new note button
+**/
+.fa-sort-down{
+  display: none;
+}
+
+.fa-search-mobile{
+  display: none;
+}
+
+#new-note-button{
+  display: none; 
+}

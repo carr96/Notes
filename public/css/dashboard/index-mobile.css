@@ -1,6 +1,7 @@
 /**
   CSS elements from desktop version to hide
-  <span class="nav-link-word">
+  nav-link-word
+  note-search-container
 **/
 
 /**
@@ -17,7 +18,7 @@ nav{
   box-shadow: none;
   background-color: white;
   margin-bottom: 0%;
-  height: 7vh;
+  height: 8vh;
   z-index: 1000;
   justify-content: space-around;
   border-top: solid thin #eee;
@@ -36,4 +37,106 @@ nav i{
 
 /**
  Header move to top
-**/ 
+**/
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #4285f4;
+  color: white;
+  text-align: center;
+  font-size: 120%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+
+/**
+  Hide note-search-container
+**/
+#note-search-container{
+  display: none;
+}
+
+/**
+  Search icon
+**/
+.fa-search-mobile{
+  font-size: 100%;
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/**
+  Hide the new note textarea
+**/
+main{
+  display: none;
+}
+
+/**
+  Hide the 'new note'
+**/
+#new-note-container{
+  display: none;
+}
+
+/**
+  Changes to the notes
+**/
+aside{
+  width: 95%;
+  margin-top: 20%;
+}
+
+.textarea-container{
+  margin-top: 0%;
+}
+
+.title{
+  padding-top: 10%;
+}
+
+.delete{
+  top: 2%;
+  left: -7%;
+}
+
+#new-note-button{
+  display: block;
+  z-index: 1000;
+  position: fixed;
+  bottom: 12%;
+  right: 5%;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background-color: white;
+  box-shadow:0 3px 3px -2px rgba(0,0,0,0.2),0 3px 4px 0 rgba(0,0,0,0.14),0 1px 8px 0 rgba(0,0,0,0.12);
+}
+
+.fa-pencil-alt{
+  font-size: 110%;
+  color: #4285f4;
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+}
+
+.fa-plus{
+  color: #4285f4;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  font-size: 80%;
+}
+
+/**
+  Active Link color Change
+**/
+.active{
+  color: #4285f4;
+}
