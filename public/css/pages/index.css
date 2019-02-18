@@ -154,7 +154,7 @@ label{
 
 #guest-btn{
   position: absolute;
-  top: 75%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%);
   background-color: black;
@@ -186,6 +186,6 @@ label{
   }
 
   .error{
-    margin-top: .5%;  
+    margin-top: .5%;
   }
 }

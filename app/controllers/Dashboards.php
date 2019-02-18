@@ -7,38 +7,17 @@ class Dashboards extends Controller{
     $this->dashboardModel = $this->model('Dashboard');
   }
 
-  // What to make the index page to dashboard?
-  // Maybe have no index page?
-  // Api news generator?
-  // All features shows in snippets?
-  public function home(){
-    $this->authorize();
-    $name = $this->getName($_SESSION['user_id']);
-    $investment_total = $this->dashboardModel->notes_num($_SESSION['user_id'],'tbl_investement_notes_general');
-    $developing_total = $this->dashboardModel->notes_num($_SESSION['user_id'], 'tbl_developing_notes_general');
-
-    // Check if the user is a guest or not
-    if(strpos($name, 'Guest:') !== false){
-      $name = substr_replace($name ,"", -17);
-    }
-
-    $name = htmlspecialchars($name);
-    $data = [
-      'name' => 'Welcome ' . $name,
-      'investment_total' => $investment_total,
-      'developing_total' => $developing_total
-    ];
-
-    // Change data name to more friendly
-    $this->view('dashboards/home', $data);
-  }
-
   /*
     data = (notes, table, header on top of page, repeat the method name)
   */
   public function investment_general(){
     $this->authorize();
     $name = $this->getName($_SESSION['user_id']);
+    // Check if the user is a guest or not
+    if(strpos($name, 'Guest:') !== false){
+      $name = substr_replace($name ,"", -17);
+    }
+
     $this->table = 'tbl_investement_notes_general';
     $notes = $this->notes($this->table);
     if($notes === ''){
@@ -51,6 +30,11 @@ class Dashboards extends Controller{
   public function developing_general(){
     $this->authorize();
     $name = $this->getName($_SESSION['user_id']);
+    // Check if the user is a guest or not
+    if(strpos($name, 'Guest:') !== false){
+      $name = substr_replace($name ,"", -17);
+    }
+
     $this->table = 'tbl_developing_notes_general';
     $notes = $this->notes($this->table);
     if($notes === ''){
