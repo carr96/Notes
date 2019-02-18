@@ -241,6 +241,8 @@ let header = document.getElementById('mobile-header');
       } else{
         savedNote.forEach(el => {
           el.style.display = "none";
+          noteSearch.style.display = 'none';
+          header.style.display = 'none';
         });
       }
       noteBtn.style.display = "none";
@@ -250,13 +252,13 @@ let header = document.getElementById('mobile-header');
     el.addEventListener('click', () => {
       newNote.style.display = "block";
       noteBtn.style.display = "none";
-      noteSearch.style.display = 'none';
-      header.style.display = 'none';
       if(getscreenWidth(screenWidth) > 900){
         el.style.display = "block";
       } else{
         savedNote.forEach(non =>{
           non.style.display = "none";
+          noteSearch.style.display = 'none';
+          header.style.display = 'none';
         })
       }
     });
