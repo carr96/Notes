@@ -4,6 +4,9 @@
   note-search-container
 **/
 
+#content-wrapper{
+  width: 100%;
+}
 /**
   New nav, move to bottom of page and take out words
 **/
@@ -22,6 +25,7 @@ nav{
   z-index: 1000;
   justify-content: space-around;
   border-top: solid thin #eee;
+  z-index: 1000000;
 }
 
 nav a{
@@ -52,71 +56,121 @@ header{
 }
 
 /**
-  Hide note-search-container
+  Search form
 **/
+
 #note-search-container{
-  display: none;
+  position: fixed;
+  top: 5%;
+  left: 0;
+  z-index: 100;
+  color: white;
+  text-align: center;
+  font-size: 100%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+
+#note-search-container button{
+  width: 15%;
+  border: none;
+  border-radius: 0px;
+  background-color: white;
+  border-bottom: solid thin #999;
+}
+
+#note-search{
+  border-radius: 0px;
+  border: none;
+  border-bottom: solid thin #999;
+}
+
+.fa-search{
+  font-size: 150%;
+  color: #4285f4;
+}
+
+#search-word{
+  width: 50%;
+  background-color: #6f6f6f;
+  margin: auto;
+  border-radius: 500px;
+  text-align: center;
+  padding: 1%;
+  position: relative;
 }
 
 /**
-  Search icon
+  Search icon and sort-down icon
 **/
-.fa-search-mobile{
-  font-size: 100%;
-  position: absolute;
-  right: 0%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.fa-sort-down{
+  visibility:visible;
 }
-
 /**
   new note textarea,
 **/
+
 main{
   display: none;
   width: 100%;
-  margin: 15% auto 0 auto;
+  padding-top: 5%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 0%;
+}
+
+#cancel-note{
+  display: block;
+  width: 20%;
+  margin-left: 0%;
+  position: absolute;
+  top: 0;
+  padding: 2%;
+}
+
+#cancel-note a{
+  text-decoration: none;
+  color: #4285f4;
+}
+
+#add-title-note{
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 #note{
-  height: 48vh;
+  height: 50vh;
+  width: 100%;
+  margin-top: 25%;
+  border: none;
+  font-size: 100%;
 }
 
 #add-title{
   width: 100%;
   padding: 2%;
+  border: none;
+  border-radius: 0px;
+  background: none;
+  border-bottom: solid thin #999;
+  margin-top: 5%;
 }
 
 #add-note{
-  width: 49%;
-  padding: 2%;
-  position: absolute;
-  right: auto;
-  top: 100%;
-  left: 0;
-  margin-left: 0%;
+  width: 20%;
+  border-radius: 5000px;
+  padding: 1%;
+  margin-left: 75%;
 }
 
-#reset-btn{
-  width: 49%;
-  padding: 2%;
-  left: auto;
-  top: 100%;
-  right: 0;
-}
-
-#cancel-note{
-  display: block;
-  position: absolute;
-  top: 200%;
-  width: 100%;
-  border: none;
-  background: #e74c3c;
-  border-radius: 5px;
-  padding: 2%;
-  color: white;
-  font-size: 105%;
-}
 /**
   Hide the 'new note'
 **/
@@ -128,8 +182,9 @@ main{
   Changes to the notes
 **/
 aside{
+  display: block;
   width: 95%;
-  margin-top: 20%;
+  margin-top: 30%;
 }
 
 .textarea-container{
@@ -142,7 +197,8 @@ aside{
 
 .delete{
   top: 2%;
-  left: -7%;
+  left: 2%;
+  z-index: 100;
 }
 
 #new-note-button{
@@ -180,4 +236,44 @@ aside{
 **/
 .active{
   color: #4285f4;
+}
+
+#Settings-hidden{
+  left: auto;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  width: 45%;
+}
+
+
+.open{
+  position: absolute;
+  z-index: 1000;
+  top: 6.1%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  text-align:center;
+  border: none;
+  border-left: solid thin #999;
+}
+
+.open a{
+  text-decoration: none;
+  color:#999;
+  background-color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  border-top: none;
+  font-size: 95%;
+}
+
+.open a:first-child{
+  border-top: none;
+}
+
+.open a:hover{
+  filter: brightness(90%);
 }

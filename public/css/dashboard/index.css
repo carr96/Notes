@@ -174,7 +174,7 @@ aside{
 }
 
 .fa-trash-alt{
-  color: #888;
+  color: #ed7669;
 }
 
 .title{
@@ -233,18 +233,6 @@ form{
   position: relative;
 }
 
-#reset-btn{
-  width: 15%;
-  font-size: 105%;
-  background-color: #888;
-  color: white;
-  border: none;
-  padding: .65%;
-  border-radius: 5px;
-  position: absolute;
-  left: 0;
-}
-
 #add-title{
   width: 30%;
   font-size: 100%;
@@ -266,7 +254,7 @@ form{
   border-radius: 5px;
 }
 
-#add-note:hover, .fa-times-circle:hover, .title:hover, #note-search-container button:hover, #reset-btn:hover{
+#add-note:hover, .fa-times-circle:hover, .title:hover, #note-search-container button:hover{
   cursor: pointer;
   filter: brightness(90%);
 }
@@ -309,13 +297,10 @@ to   { opacity: 1; }
     - search div
     - new note button
     - cancel note
+    - exit search
 **/
 .fa-sort-down{
-  display: none;
-}
-
-.fa-search-mobile{
-  display: none;
+visibility: hidden;
 }
 
 #new-note-button{
@@ -323,5 +308,5 @@ to   { opacity: 1; }
 }
 
 #cancel-note{
-  display: none; 
+  display: none;
 }

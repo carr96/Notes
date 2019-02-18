@@ -38,32 +38,35 @@ class Dashboards extends Controller{
   */
   public function investment_general(){
     $this->authorize();
+    $name = $this->getName($_SESSION['user_id']);
     $this->table = 'tbl_investement_notes_general';
     $notes = $this->notes($this->table);
     if($notes === ''){
       $notes = htmlspecialchars($notes);
     }
-    $data = $this->data($notes, $this->table, 'Investing', 'investment_general');
+    $data = $this->data($notes, $this->table, 'Investments', 'investment_general', $name);
     $this->view('dashboards/index', $data);
   }
 
   public function developing_general(){
     $this->authorize();
+    $name = $this->getName($_SESSION['user_id']);
     $this->table = 'tbl_developing_notes_general';
     $notes = $this->notes($this->table);
     if($notes === ''){
       $notes = htmlspecialchars($notes);
     }
-    $data = $this->data($notes, $this->table, 'Developing', 'developing_general');
+    $data = $this->data($notes, $this->table, 'Developing', 'developing_general', $name);
     $this->view('dashboards/index', $data);
   }
 
-  public function data($notes, $table, $header, $method){
+  public function data($notes, $table, $header, $method, $name){
     return $data = [
       'notes' => $notes,
       'table' => $table,
       'header' => $header,
-      'method' => $method
+      'method' => $method,
+      'username' => $name
     ];
   }
 

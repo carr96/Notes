@@ -59,16 +59,16 @@
       </div>
 
       <div class="hidden" id="Settings-hidden">
+        <div id="mobile-settings-header"><?php echo $data['username'];?></div>
         <a class="sub-link disable" id="logout"href="<?php echo URLROOT?>/dashboards/logout"> Logout</a>
         <a class="sub-link disable" href="">Change Username</a>
         <a class="sub-link disable" href="">Change Password</a>
       </div>
 
 
-      <header>
+      <header id="mobile-header">
         <span id="header-text"><?php echo $data['header']?></span>
         <i class="fas fa-sort-down"></i>
-        <i class="fas fa-search fa-search-mobile"></i>
       </header>
       <section id="content-wrapper">
         <aside id="aside">
@@ -80,8 +80,8 @@
 
           <div id="note-search-container">
             <form action="<?php echo URLROOT;?>/dashboards/<?php echo $data['method']?>" method="POST">
-              <input id="note-search" type="text" name="search" placeholder="Search Notes">
-              <button type="submit"><i class="fas fa-search"></i></button>
+              <input id="note-search" type="text" name="search" placeholder="Search <?php echo $data['header'];?>">
+              <button type="submit"><i class="fas fa-search fa-search-desktop"></i></button>
             </form>
             <?php
               if(isset($_SESSION['search-word'])){
@@ -102,7 +102,7 @@
           </div>
           <?php foreach($data['notes'] as $note): ?>
             <?php echo '
-            <div class="textarea-container">
+            <div class="textarea-container saved-note-container">
               <div class="note-id-hide">'. htmlspecialchars($note->note_id) .'</div>'.'
               <div class="saved-note">'. htmlspecialchars($note->note) .'</div>
               <div class="delete"><a class="delete-a" href="'.URLROOT.'/dashboards/delete_note/'.htmlspecialchars($note->note_id).'/'.$data['table'] .'"><i class="far fa-trash-alt"></i></a></div>
@@ -117,12 +117,11 @@
           <form id="note-form" action="http://localhost/organizer/dashboards/add_note/<?php echo $data['table'];?>" method="POST">
             <textarea name="note" id="note" placeholder="Begin Writing...."></textarea>
             <div id="add-title-note">
-              <button id="reset-btn" type="reset" value="Reset">Clear Note</button>
+              <div id="cancel-note"><a href="<?php echo URLROOT;?>/dashboards/goBack">Cancel</a></div>
               <input name="title" id="add-title" type="text" placeholder="Title">
               <button id="add-note" type="submit">Add</button>
-              <button type="button" id="cancel-note">Cancel</button>
+            </div>
           </form>
-          </div>
         </main>
       </section>
 

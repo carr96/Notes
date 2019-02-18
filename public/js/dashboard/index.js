@@ -197,40 +197,68 @@ const screenWidth = window.innerWidth;
 const getscreenWidth = (screenWidth) =>{
     return screenWidth;
 }
+
+  // Links
+{
+  if(getscreenWidth(screenWidth) > 900){
+
+  } else{
+    const investmentLink = document.getElementById('Investments');
+    const investmentLinkDesktop = document.getElementById('Investments-hidden');
+
+    investmentLink.addEventListener('click', () => {
+      investmentLinkDesktop.style.display='none';
+      investmentLink.href="http://localhost/organizer/dashboards/investment_general";
+    });
+
+    const developingLink = document.getElementById('Developing');
+    const developingLinkDesktop = document.getElementById('Developing-hidden');
+
+    developingLink.addEventListener('click', () => {
+      developingLinkDesktop.style.display='none';
+      developingLink.href="http://localhost/organizer/dashboards/developing_general";
+    });
+  }
+}
+
 // Btns
 const noteBtn = document.getElementById('new-note-button');
-const savedNote = document.getElementById('aside');
+const savedNote = Array.from(document.querySelectorAll('.saved-note-container'));
 let newNote = document.getElementById("main");
+let noteSearch = document.getElementById('note-search-container');
+let header = document.getElementById('mobile-header');
 
 // New Note Button/Update
 {
   noteBtn.addEventListener('click' ,() =>{
       newNote.style.display = "block";
+      noteSearch.style.display = 'none';
+      header.style.display = 'none';
       if(getscreenWidth(screenWidth) > 900){
-        savedNote.style.display = "block";
+        savedNote.forEach(el => {
+          el.style.display = "block";
+        });
       } else{
-        savedNote.style.display = "none";
+        savedNote.forEach(el => {
+          el.style.display = "none";
+        });
       }
       noteBtn.style.display = "none";
   });
 
-  savedNote.addEventListener('click', () => {
-    newNote.style.display = "block";
-    noteBtn.style.display = "none";
-    if(getscreenWidth(screenWidth) > 900){
-      savedNote.style.display = "block";
-    } else{
-      savedNote.style.display = "none";
-    }
-  });
-}
-
-// Cancel Btn
-{
-  const cancelBtn = document.getElementById('cancel-note');
-  cancelBtn.addEventListener('click', () => {
-    newNote.style.display = "none";
-    savedNote.style.display = "block";
-    noteBtn.style.display = "block";
+  savedNote.forEach(el => {
+    el.addEventListener('click', () => {
+      newNote.style.display = "block";
+      noteBtn.style.display = "none";
+      noteSearch.style.display = 'none';
+      header.style.display = 'none';
+      if(getscreenWidth(screenWidth) > 900){
+        el.style.display = "block";
+      } else{
+        savedNote.forEach(non =>{
+          non.style.display = "none";
+        })
+      }
+    });
   });
 }
