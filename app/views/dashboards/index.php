@@ -55,14 +55,11 @@
         <a class="sub-link disable" href="">Nutrition</a>
         <a class="sub-link disable" href="">Resume</a>
         <a class="sub-link disable" href="">Goals</a>
-        <a id="logout"href="<?php echo URLROOT?>/dashboards/logout"> Logout</a>
       </div>
 
       <div class="hidden" id="Settings-hidden">
         <div id="mobile-settings-header"><?php echo $data['username'];?></div>
         <a class="sub-link disable" id="logout"href="<?php echo URLROOT?>/dashboards/logout"> Logout</a>
-        <a class="sub-link disable" href="">Change Username</a>
-        <a class="sub-link disable" href="">Change Password</a>
       </div>
 
 
