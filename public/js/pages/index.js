@@ -29,8 +29,7 @@ login = `
 
     <button type="submit" id="btn"> Login </button>
   </form>
-`;
-
+`; 
 loginBtn.addEventListener('click' ,() => {
   login = `
     <form class="form" id="login" action="http://localhost/organizer/pages/login" method="POST">
