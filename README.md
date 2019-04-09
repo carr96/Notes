@@ -1,2 +1,2 @@
 # dashboard
-Note Organzier
+Note Organizer
