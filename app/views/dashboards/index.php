@@ -21,8 +21,8 @@
       <nav>
         <a id="Investments" class="link" href="javascript:void(0)"><span class="nav-link-word">Investments</span><i class="fas fa-chart-line"></i></a>
         <a id="Developing" class="link" href="javascript:void(0)"><span class="nav-link-word">Developing</span><i class="fas fa-code"></i></a>
-        <a id="Tasks" class="link" href="javascript:void(0)"><span class="nav-link-word">Tasks</span><i class="fas fa-tasks"></i></a>
-        <a id="Personal" class="link" href="javascript:void(0)"><span class="nav-link-word">Personal</span><i class="far fa-user-circle"></i></a>
+        <a id="Front-End" class="link" href="javascript:void(0)"><span class="nav-link-word">Front-End</span><i class="fas fa-paint-brush"></i></a>
+        <a id="Back-End" class="link" href="javascript:void(0)"><span class="nav-link-word">Back-End</span><i class="far fa-file-code"></i></a>
         <a id="Settings" class="link" href="javascript:void(0)"><span class="nav-link-word">Settings</span><i class="fas fa-cogs"></i></a>
       </nav>
       <div class="hidden" id="Investments-hidden">
@@ -33,10 +33,12 @@
         <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/developing_general">General</a>
       </div>
 
-      <div class="hidden" id="Tasks-hidden">
+      <div class="hidden" id="Front-End-hidden">
+        <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/front_end">General</a>
       </div>
 
-      <div class="hidden" id="Personal-hidden">
+      <div class="hidden" id="Back-End-hidden">
+        <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/back_end">General</a>
       </div>
 
       <div class="hidden" id="Settings-hidden">
@@ -68,12 +70,6 @@
               }
             ?>
           </div>
-          <!--
-          <i class="new-note-i fas fa-plus"></i>
-          <i class="new-note-i fas fa-pencil-alt"></i>
-          <i class="new-note-i fas fa-edit"></i>
-          <i class="new-note-i far fa-sticky-note"></i>
-          -->
           <div id="new-note-container" class="textarea-container">
             <div class="note-id-hide"></div>
             <div class="saved-note"></div>

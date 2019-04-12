@@ -44,6 +44,40 @@ class Dashboards extends Controller{
     $this->view('dashboards/index', $data);
   }
 
+  public function back_end(){
+    $this->authorize();
+    $name = $this->getName($_SESSION['user_id']);
+    // Check if the user is a guest or not
+    if(strpos($name, 'Guest:') !== false){
+      $name = substr_replace($name ,"", -17);
+    }
+
+    $this->table = 'tbl_back_end_notes';
+    $notes = $this->notes($this->table);
+    if($notes === ''){
+      $notes = htmlspecialchars($notes);
+    }
+    $data = $this->data($notes, $this->table, 'Back-End', 'back_end', $name);
+    $this->view('dashboards/index', $data);
+  }
+
+  public function front_end(){
+    $this->authorize();
+    $name = $this->getName($_SESSION['user_id']);
+    // Check if the user is a guest or not
+    if(strpos($name, 'Guest:') !== false){
+      $name = substr_replace($name ,"", -17);
+    }
+
+    $this->table = 'tbl_front_end_notes';
+    $notes = $this->notes($this->table);
+    if($notes === ''){
+      $notes = htmlspecialchars($notes);
+    }
+    $data = $this->data($notes, $this->table, 'Front-End', 'front_end', $name);
+    $this->view('dashboards/index', $data);
+  }
+
   public function data($notes, $table, $header, $method, $name){
     return $data = [
       'notes' => $notes,

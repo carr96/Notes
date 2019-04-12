@@ -23,13 +23,15 @@
   <a class="sub-link disable" href="">Tips</a>
 </div>
 
-<div class="hidden" id="Tasks-hidden">
+<div class="hidden" id="Front-End-hidden">
+  <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/front_end">General</a>
   <a class="sub-link disable" href="">List</a>
   <a class="sub-link disable" href="">Stopwatch</a>
   <a class="sub-link disable" href="">Reminders</a>
 </div>
 
-<div class="hidden" id="Personal-hidden">
+<div class="hidden" id="Back-End-hidden">
+  <a class="sub-link" href="<?php echo URLROOT;?>/dashboards/back_end">General</a>
   <a class="sub-link disable" href="">Expenses/Income</a>
   <a class="sub-link disable" href="">Passwords</a>
   <a class="sub-link disable" href="">Nutrition</a>

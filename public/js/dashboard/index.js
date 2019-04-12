@@ -218,6 +218,22 @@ const getscreenWidth = (screenWidth) =>{
       developingLinkDesktop.style.display='none';
       developingLink.href="http://localhost/organizer/dashboards/developing_general";
     });
+
+    const frontEndLink = document.getElementById('Front-End');
+    const frontEndLinkDesktop = document.getElementById('Front-End-hidden');
+
+    frontEndLink.addEventListener('click', () => {
+      frontEndLinkDesktop.style.display='none';
+      frontEndLink.href="http://localhost/organizer/dashboards/front_end";
+    });
+
+    const backEndLink = document.getElementById('Back-End');
+    const backEndLinkDesktop = document.getElementById('Back-End-hidden');
+
+    backEndLink.addEventListener('click', () => {
+      backEndLinkDesktop.style.display='none';
+      backEndLink.href="http://localhost/organizer/dashboards/back_end";
+    });
   }
 }
 

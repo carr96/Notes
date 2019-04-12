@@ -29,7 +29,7 @@ login = `
 
     <button type="submit" id="btn"> Login </button>
   </form>
-`; 
+`;
 loginBtn.addEventListener('click' ,() => {
   login = `
     <form class="form" id="login" action="http://localhost/organizer/pages/login" method="POST">
@@ -85,12 +85,11 @@ document.querySelector('#guest-selection').addEventListener('click', () =>{
   const guest = `
   <div class="form">
     <div id="guest-list">
-      <h3> See the features and tools </h3>
-      <p> <i class="fas fa-chart-line features-icons"></i>Investment tools </p>
-      <p> <i class='fas fa-clipboard-list features-icons'></i>Organizer tools </p>
-      <p> <i class="fas fa-sticky-note features-icons"></i>Store information </p>
-      <p><i class="fas fa-newspaper features-icons"></i>See news you care about</p>
-      <p> <i class="fas fa-list-alt features-icons"></i>Much more! </p>
+      <h3> Test out some of the notes </h3>
+      <p> <i class="fas fa-chart-line features-icons"></i>Investment Notes</p>
+      <p> <i class='fas fa-code features-icons'></i>Developing Notes </p>
+      <p> <i class="fas fa-paint-brush features-icons"></i>Front-End Notes </p>
+      <p><i class="far fa-file-code features-icons"></i>Back-End Notes</p>
       <a id="guest-btn" href="http://localhost/organizer/pages/guest">Continue As Guest</a>
     </div>
   </div>
