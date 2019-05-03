@@ -41,11 +41,11 @@ const noteOriginalFunc = n => {
 {
   const limitSaved = (note = '', title = '', noteLimit, titleLimit) => {
     if(note === ''){
-      newTitle= title.substring(0, titleLimit);
+      let newTitle= title.substring(0, titleLimit);
       newTitle += '...';
       return newTitle;
     } else{
-      newNote = note.substring(0, noteLimit);
+      let newNote = note.substring(0, noteLimit);
       newNote += '...';
       return newNote;
     }
